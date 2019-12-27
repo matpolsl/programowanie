@@ -298,7 +298,17 @@ void gameloop() {
         userInput();
         show();
     }
-    
+    /*
+    if (!isCollide(x, y + 1))
+    {
+        moveBlock(x, y + 1);
+    }
+    else {
+        saveBlock();
+        pts();
+    }
+    show();
+    */
 }
 int score() {
     return ptk;

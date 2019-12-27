@@ -109,17 +109,31 @@ void menu(){
             gameloop();
         system("cls");
         cout << "Game over" << endl << "Twoj wynik to: " <<score()<< endl << "Czy chcesz zapisac go nqa tablicy?:[t/n]";
-        cin >> b;
-        if (b == 't') {
-            cout << "Wprowadz nazwe: ";
+        bool F = true;
+        char key;
+        while (F) {
+            key = getch();
             string name;
-            cin >> name;
-            send(score(), name);
-            menu();
+
+            switch (key) {
+            case 't':
+                F = false;
+                cout << "Wprowadz nazwe: ";
+                cin >> name;
+                system("cls");
+                send(score(), name);
+                menu();
+                break;
+            case 'n':
+                F = false;
+                system("cls");
+                menu();
+                break;
+            }
         }
-        else {
-            menu();
-        }
+        
+
+        
     }
     if (a == 2) {
         scoreboard();

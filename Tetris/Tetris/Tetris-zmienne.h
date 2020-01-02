@@ -2,7 +2,8 @@ bool gameover = false;
 //Wspó³rzêdne 
 int y = 0;
 int x = 4;
-
+int czas = 0;
+int const gamespeed = 5000;
 int ptk = 0;
 int block[4][4]{};// Tablica w której przechowywany jest blok
 bool newblock = true;

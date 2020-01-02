@@ -205,16 +205,21 @@ void userInput()
 void ini() {
     gameover = false;
     ptk = 0;
-
+    newblock = true;
     for (int j = 0; j < 12; j++) {
-        board[0][j] = boardc[0][j] = 9;
+        board[0][j] = 9;
+        boardc[0][j] = 9;
     }
     for (int j = 0; j < 12; j++) {
-        board[21][j] = boardc[21][j] = 9;
+        board[21][j] = 9;
+        boardc[21][j] = 9;
     }
     for (int i = 1; i <= 20; i++) {
         board[i][0] = boardc[i][0] = 9;
-        for(int j=1;j<11;j++) board[i][j] = boardc[i][j] = 0;
+        for (int k = 1; k < 11; k++) {
+            board[i][k] = 0;
+            boardc[i][k] = 0;
+        }
         board[i][11] = boardc[i][11] = 9;
     }
 }
@@ -293,22 +298,28 @@ void gameloop() {
         newblock = false;
         show();
     }
-    
-    if (kbhit()) {
-        userInput();
-        show();
-    }
-    /*
-    if (!isCollide(x, y + 1))
-    {
-        moveBlock(x, y + 1);
-    }
     else {
-        saveBlock();
-        pts();
+        if (kbhit()) {
+            userInput();
+            show();
+            czas = 0;
+        }
+        else {
+            czas++;
+        }
+        if (czas > gamespeed) {
+            if (!isCollide(x, y + 1))
+            {
+                moveBlock(x, y + 1);
+            }
+            else {
+                saveBlock();
+                pts();
+            }
+            show();
+            czas = 0;
+        }
     }
-    show();
-    */
 }
 int score() {
     return ptk;

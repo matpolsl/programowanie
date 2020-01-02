@@ -1,2 +1,4 @@
-﻿  Tetris-game.cpp
+﻿  Tetris-menu.cpp
+D:\Politechnika\OneDrive - Politechika Śląska\Studia\Programy\Tetris\Tetris\Tetris-menu.cpp(127,17): warning C4129: " ": nierozpoznany znak sekwencji ucieczki
+D:\Politechnika\OneDrive - Politechika Śląska\Studia\Programy\Tetris\Tetris\Tetris-menu.cpp(184,9): warning C4101: "a": lokalna zmienna, do której nie istnieje odwołanie
   Tetris.vcxproj -> D:\Politechnika\OneDrive - Politechika Śląska\Studia\Programy\Tetris\Debug\Tetris.exe

@@ -184,7 +184,7 @@ void menu(){
     int a;
     logoshow();
     bool loopmenu = true;
-    
+    bool newlogo = false;
     SetConsoleTextAttribute(hOut2, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_INTENSITY);
     //cout << "Gra Tetris"<<endl;
     cout << "1. Gra" << endl;
@@ -208,21 +208,23 @@ void menu(){
                 scoreboard();
                 break;
             case '3':
+                loopmenu = false;
                 break;
             }
         }
         else {
             t++;
-            _sleep(150);
+            Sleep(1);
         }
         if (t > 200) {
             system("cls");
             loopmenu = false;
-            menu();
+            newlogo = true;
             t = 0;
         }
-   
-
+    }
+    if (newlogo) {
+        menu();
     }
 }
 
